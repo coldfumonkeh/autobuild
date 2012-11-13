@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'rest_client'
-require 'Haml'
+require 'haml'
 
 def get_or_post(path, opts={}, &block)
   get(path, opts, &block)

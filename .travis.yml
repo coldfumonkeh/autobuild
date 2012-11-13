@@ -1,0 +1,13 @@
+rvm: 
+  - 1.9.3
+  - 1.9.2
+# whitelist
+branches:
+  only:
+    - master
+
+notifications:
+  email:
+    - me@mattgifford.co.uk
+
+script: bundle exec rspec spec

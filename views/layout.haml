@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title autobuild.monkeh.me
+    %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")
+    %link(rel="stylesheet" href="css/master.css")
+  %body
+    #header
+      %div.wrap
+        =haml :"shared/menu", :layout => false
+    %div.leadin-block
+      %div.section1
+        %div.wrap
+          =yield
+        %div.grayband
+          %div.wrap
+            %p 
+              %a{:href => "http://autobuild.monkeh.me"} autobuild.monkeh.me 
+              was created by
+              %a{:href => "http://www.monkehworks.com", :title => "Visit monkehWorks Ltd", :target => "_blank"} monkehWorks Ltd
+              using Ruby and the 
+              %a{:href => "http://sinatrarb.com", :title => "Sinatra", :target => "_blank"} Sinatra 
+              framework.

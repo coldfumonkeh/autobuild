@@ -1,0 +1,47 @@
+%div.inner 
+  %h1 
+    Streamline your 
+    %a{:href => "http://build.phonegap.com", :title => "Visit build.phonegap.com", :target => "_blank"} PhoneGap Build 
+    deployments
+  %p 
+    autobuild allows you to easily set up a 
+    %b Web Service Hook 
+    in your 
+    %b Git 
+    repository that will automatically pull the updated code from your last commit and start building the application.
+  %h2
+    How does it work?
+  %p
+    It's very simple. You will need:
+    %ul
+      %li 
+        Your PhoneGap Build 
+        %b username 
+        (typically your email address)
+      %li 
+        Your PhoneGap Build 
+        %b password
+      %li 
+        The 
+        %b App ID 
+        for the application you are working on
+  %p
+    The account details are used to perform an HTTP Basic Authentication into the PhoneGap Build control panel to perform the pull request. Don't worry, we 
+    %b
+      do not
+    store these details anywhere.
+    
+  %p
+    The URL you provide as the Web Hook must match the following format:
+    %br 
+      http://autobuild.monkeh.me/
+      %b username
+      &#47;
+      %b password
+      &#47;
+      %b appid
+      
+  %p
+    That's it! Save that URL as the hook, and every commit you make to your Git repository will automatically update the code and rebuild the application for you.
+      
+  

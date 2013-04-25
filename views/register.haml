@@ -1,0 +1,57 @@
+%div.inner 
+  %h1 
+    Client ID Registration
+
+- if defined? @client
+  %br
+  %h2
+    All Done!
+  %p
+    Your client ID is:
+    %b 
+      =@client.id
+  %p
+    Keep this value safe. It is yours to love, cherish and enjoy.
+    
+  %p
+    You can now store a URL similar to the following in your post commit hook:
+    %br
+    %br
+      %b
+        =@clientExampleURL
+    %br
+      (where 
+      %b
+        =@client.id
+      is your client ID and
+      %b
+        123456 
+      is your PhoneGap Build application ID)
+  
+- else
+
+  %p
+    If you're not comfortable sending or storing your username and password in every request between your remote Git repository and PhoneGap Build, you can set up a client ID key and use that value in the URL request instead.
+  %p
+    As an example, the post commit hook URL would look something like this:
+    %br
+    %br
+    %b
+      =@clientExampleURL
+    %br
+    %br
+      (where 
+      %b
+        =@exampleClientID
+      is your client ID and
+      %b
+        123456 
+      is your PhoneGap Build application ID)
+  %p
+    To do so you will need to provide your PhoneGap Build username and password details below and submit them to autobuild.
+    They will be stored and registered against your client ID key and used in the HTTP Basic Authentication process to push the new build.
+
+  %form{:method => "post"}
+    %input{:type => "text", :name => "username", :id => "username", :placeholder => "PhoneGap Build Username"}
+    %input{:type => "password", :name => "password", :id => "password", :placeholder => "PhoneGap Build Password"}
+    %input{:type => "submit", :class => "submit", :value => "Get Client ID" }

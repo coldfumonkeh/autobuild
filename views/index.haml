@@ -28,11 +28,11 @@
   %p
     The account details are used to perform an 
     %a{:href => "http://en.wikipedia.org/wiki/Basic_access_authentication", :target => "_blank"} HTTP Basic Authentication 
-    into the PhoneGap Build control panel to perform the pull request. Don't worry, we 
+    into the PhoneGap Build control panel to perform the pull request. In this instance, we 
     %b
       do not
     store these details anywhere.
-    
+      
   %p
     The URL you provide as the Web Hook must match the following format:
     %br 
@@ -45,8 +45,10 @@
       
   %p
     That's it! Save that URL as the hook, and every commit you make to your Git repository will automatically update the code and rebuild the application for you.
-      
+    
   %p
-    The full source code is available to view on the
-    %a{:href => "https://github.com/coldfumonkeh/autobuild"} autobuild Github repository
-  
+    autobuild also provides an alternate method of creating the URL using a client ID key, which 
+    %b
+      does 
+    store your PhoneGap Build account details for reference. You can find out more and register for your specific client ID key
+    %a{:href => "/register", :title => "Register your client ID" } here.

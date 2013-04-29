@@ -51,7 +51,7 @@
     To do so you will need to provide your PhoneGap Build username and password details below and submit them to autobuild.
     They will be stored and registered against your client ID key and used in the HTTP Basic Authentication process to push the new build.
 
-  %form{:method => "post"}
+  %form{:method => "post", :class => "regForm"}
     %input{:type => "text", :name => "username", :id => "username", :placeholder => "PhoneGap Build Username"}
     %input{:type => "password", :name => "password", :id => "password", :placeholder => "PhoneGap Build Password"}
     %input{:type => "submit", :class => "submit", :value => "Get Client ID" }

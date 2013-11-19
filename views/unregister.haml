@@ -1,0 +1,28 @@
+%div.inner 
+  %h1 
+    Client ID Deregistration
+
+- if @isDeleted === true
+  %br
+  %h2
+    Thank you.
+  %p
+    Your client ID and the accompanying credentials has been removed from the system.
+  %p
+    We're sorry to see you remove them but hope that you enjoyed using the autobuild service from 
+    %a{:href => "http://www.monkehworks.com", :title => "Visit monkehWorks Ltd", :target => "_blank"} monkehWorks Ltd
+
+- else
+
+  %p
+    If you have an existing client ID stored with the autobuild service that you would like to deregister please enter it below and submit the form to remove the stored credentials assigned with it.
+  %p
+    As a reminder, your client ID would look something like this:
+    %br
+    %br
+    %b
+      =@exampleClientID
+
+  %form{:method => "post", :class => "regForm"}
+    %input{:type => "text", :name => "clientid", :id => "clientid", :placeholder => "AutoBuild Client ID"}
+    %input{:type => "submit", :class => "submit", :value => "Remove Client ID" }

@@ -23,4 +23,14 @@ describe 'Autobuild Sinatra Application' do
     browser.last_response.should be_ok
   end
 
+  it "should load the registration page" do
+    get '/register'
+    last_response.should be_ok
+  end
+
+  it "should load the deregistration page" do
+    get '/unregister'
+    last_response.should be_ok
+  end
+
 end

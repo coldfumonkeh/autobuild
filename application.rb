@@ -65,6 +65,35 @@ post '/register' do
 
 end
 
+get '/unregister' do
+
+    @isDeleted = false
+    @exampleClientID = '2d931510-d99f-494a-8c67-87feb05e1594'
+    @clientExampleURL = SiteConfig.url_base + @exampleClientID + '/123456'
+    haml  :unregister
+    
+end
+
+post '/unregister' do
+    @isDeleted = false
+    @client = Clients.first(:id => params[:clientid])
+  
+    if @client
+        @client.destroy
+    end
+
+    @clientConfirm = Clients.first(:id => params[:clientid])
+
+    if !@clientConfirm
+      @isDeleted = true
+      puts 'client id no longer exists'
+    end
+
+            
+    haml  :unregister
+
+end
+
 get_or_post '/:clientid/:appid' do
 
   @client = Clients.first(:id => params[:clientid])
